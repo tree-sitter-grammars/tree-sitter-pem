@@ -1,0 +1,40 @@
+{
+  "name": "tree-sitter-poe-filter",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "PEM grammar for tree-sitter",
+  "repository": "ObserverOfTime/tree-sitter-pem",
+  "author": {
+    "name": "ObserverOfTime",
+    "email": "chronobserver@disroot.org",
+    "url": "https://observeroftime.github.io/"
+  },
+  "keywords": [
+    "tree-sitter",
+    "parser",
+    "lexer"
+  ],
+  "scripts": {
+    "generate": "tree-sitter generate",
+    "parse": "tree-sitter parse",
+    "test": "tree-sitter test"
+  },
+  "main": "bindings/node",
+  "dependencies": {
+    "nan": "^2.16.0"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.20.8"
+  },
+  "tree-sitter": [
+    {
+      "scope": "text.pem",
+      "file-types": [
+        "pem",
+        "key",
+        "crt",
+        "csr"
+      ]
+    }
+  ]
+}
