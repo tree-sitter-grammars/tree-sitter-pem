@@ -40,7 +40,7 @@
           "named": true
         },
         {
-          "type": "type",
+          "type": "label",
           "named": true
         }
       ]
@@ -59,7 +59,7 @@
           "named": true
         },
         {
-          "type": "type",
+          "type": "label",
           "named": true
         }
       ]
@@ -85,6 +85,10 @@
     }
   },
   {
+    "type": " ",
+    "named": false
+  },
+  {
     "type": "BEGIN",
     "named": false
   },
@@ -101,7 +105,7 @@
     "named": true
   },
   {
-    "type": "type",
+    "type": "label",
     "named": true
   }
 ]

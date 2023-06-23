@@ -15,12 +15,12 @@ Qbumz+SZu08d1Y3T3OVC2NGqxOzfHmg=
   (content
     (header
       (dashes)
-      (type)
+      (label)
       (dashes))
     (data)
     (footer
       (dashes)
-      (type)
+      (label)
       (dashes))))
 
 ================================================================================
@@ -43,22 +43,22 @@ Qbumz+SZu08d1Y3T3OVC2NGqxOzfHmg=
   (content
     (header
       (dashes)
-      (type)
+      (label)
       (dashes))
     (data)
     (footer
       (dashes)
-      (type)
+      (label)
       (dashes)))
   (content
     (header
       (dashes)
-      (type)
+      (label)
       (dashes))
     (data)
     (footer
       (dashes)
-      (type)
+      (label)
       (dashes))))
 
 ================================================================================
@@ -77,10 +77,10 @@ BgUrgQQAIg==
   (content
     (header
       (dashes)
-      (type)
+      (label)
       (dashes))
     (data)
     (footer
       (dashes)
-      (type)
+      (label)
       (dashes))))

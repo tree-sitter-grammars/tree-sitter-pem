@@ -33,6 +33,7 @@
         "pem",
         "key",
         "crt",
+        "cer",
         "csr"
       ]
     }

@@ -46,8 +46,12 @@
           "value": "BEGIN"
         },
         {
+          "type": "STRING",
+          "value": " "
+        },
+        {
           "type": "SYMBOL",
-          "name": "type"
+          "name": "label"
         },
         {
           "type": "SYMBOL",
@@ -67,8 +71,12 @@
           "value": "END"
         },
         {
+          "type": "STRING",
+          "value": " "
+        },
+        {
           "type": "SYMBOL",
-          "name": "type"
+          "name": "label"
         },
         {
           "type": "SYMBOL",
@@ -83,9 +91,117 @@
         "value": "[A-Za-z0-9+/]+={0,2}"
       }
     },
-    "type": {
-      "type": "PATTERN",
-      "value": " [A-Z ]+"
+    "label": {
+      "type": "TOKEN",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "X509 CERTIFICATE"
+          },
+          {
+            "type": "STRING",
+            "value": "CERTIFICATE"
+          },
+          {
+            "type": "STRING",
+            "value": "TRUSTED CERTIFICATE"
+          },
+          {
+            "type": "STRING",
+            "value": "NEW CERTIFICATE REQUEST"
+          },
+          {
+            "type": "STRING",
+            "value": "CERTIFICATE REQUEST"
+          },
+          {
+            "type": "STRING",
+            "value": "X509 CRL"
+          },
+          {
+            "type": "STRING",
+            "value": "ANY PRIVATE KEY"
+          },
+          {
+            "type": "STRING",
+            "value": "PUBLIC KEY"
+          },
+          {
+            "type": "STRING",
+            "value": "RSA PRIVATE KEY"
+          },
+          {
+            "type": "STRING",
+            "value": "RSA PUBLIC KEY"
+          },
+          {
+            "type": "STRING",
+            "value": "DSA PRIVATE KEY"
+          },
+          {
+            "type": "STRING",
+            "value": "DSA PUBLIC KEY"
+          },
+          {
+            "type": "STRING",
+            "value": "PKCS7"
+          },
+          {
+            "type": "STRING",
+            "value": "PKCS #7 SIGNED DATA"
+          },
+          {
+            "type": "STRING",
+            "value": "ENCRYPTED PRIVATE KEY"
+          },
+          {
+            "type": "STRING",
+            "value": "PRIVATE KEY"
+          },
+          {
+            "type": "STRING",
+            "value": "DH PARAMETERS"
+          },
+          {
+            "type": "STRING",
+            "value": "X9.42 DH PARAMETERS"
+          },
+          {
+            "type": "STRING",
+            "value": "SSL SESSION PARAMETERS"
+          },
+          {
+            "type": "STRING",
+            "value": "DSA PARAMETERS"
+          },
+          {
+            "type": "STRING",
+            "value": "ECDSA PUBLIC KEY"
+          },
+          {
+            "type": "STRING",
+            "value": "EC PARAMETERS"
+          },
+          {
+            "type": "STRING",
+            "value": "EC PRIVATE KEY"
+          },
+          {
+            "type": "STRING",
+            "value": "PARAMETERS"
+          },
+          {
+            "type": "STRING",
+            "value": "CMS"
+          },
+          {
+            "type": "STRING",
+            "value": "SM2 PARAMETERS"
+          }
+        ]
+      }
     },
     "dashes": {
       "type": "STRING",
