@@ -1,18 +1,17 @@
 [package]
 name = "tree-sitter-pem"
 description = "PEM grammar for the tree-sitter parsing library"
-version = "0.0.1"
+version = "0.1.1"
 keywords = ["incremental", "parsing", "pem"]
 categories = ["parsing", "text-editors"]
-repository = "https://github.com/tree-sitter/tree-sitter-pem"
-edition = "2018"
+repository = "https://github.com/ObserverOfTime/tree-sitter-pem"
+edition = "2021"
 license = "MIT"
 
 build = "bindings/rust/build.rs"
 include = [
   "bindings/rust/*",
   "grammar.js",
-  "queries/*",
   "src/*",
 ]
 
