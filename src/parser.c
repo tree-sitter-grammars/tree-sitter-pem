@@ -1,4 +1,4 @@
-#include <tree_sitter/parser.h>
+#include "tree_sitter/parser.h"
 
 #if defined(__GNUC__) || defined(__clang__)
 #pragma GCC diagnostic push
@@ -16,9 +16,9 @@
 #define MAX_ALIAS_SEQUENCE_LENGTH 5
 #define PRODUCTION_ID_COUNT 1
 
-enum {
+enum ts_symbol_identifiers {
   anon_sym_BEGIN = 1,
-  anon_sym_ = 2,
+  anon_sym_SPACE = 2,
   anon_sym_END = 3,
   aux_sym_data_token1 = 4,
   sym_label = 5,
@@ -36,7 +36,7 @@ enum {
 static const char * const ts_symbol_names[] = {
   [ts_builtin_sym_end] = "end",
   [anon_sym_BEGIN] = "BEGIN",
-  [anon_sym_] = " ",
+  [anon_sym_SPACE] = " ",
   [anon_sym_END] = "END",
   [aux_sym_data_token1] = "data_token1",
   [sym_label] = "label",
@@ -54,7 +54,7 @@ static const char * const ts_symbol_names[] = {
 static const TSSymbol ts_symbol_map[] = {
   [ts_builtin_sym_end] = ts_builtin_sym_end,
   [anon_sym_BEGIN] = anon_sym_BEGIN,
-  [anon_sym_] = anon_sym_,
+  [anon_sym_SPACE] = anon_sym_SPACE,
   [anon_sym_END] = anon_sym_END,
   [aux_sym_data_token1] = aux_sym_data_token1,
   [sym_label] = sym_label,
@@ -78,7 +78,7 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = false,
   },
-  [anon_sym_] = {
+  [anon_sym_SPACE] = {
     .visible = true,
     .named = false,
   },
@@ -269,7 +269,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           ('a' <= lookahead && lookahead <= 'z')) ADVANCE(32);
       END_STATE();
     case 22:
-      ACCEPT_TOKEN(anon_sym_);
+      ACCEPT_TOKEN(anon_sym_SPACE);
       END_STATE();
     case 23:
       ACCEPT_TOKEN(anon_sym_END);
@@ -438,7 +438,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [0] = {
     [ts_builtin_sym_end] = ACTIONS(1),
     [anon_sym_BEGIN] = ACTIONS(1),
-    [anon_sym_] = ACTIONS(1),
+    [anon_sym_SPACE] = ACTIONS(1),
     [anon_sym_END] = ACTIONS(1),
     [aux_sym_data_token1] = ACTIONS(1),
     [sym_dashes] = ACTIONS(1),
@@ -525,7 +525,7 @@ static const uint16_t ts_small_parse_table[] = {
       ts_builtin_sym_end,
   [95] = 1,
     ACTIONS(46), 1,
-      anon_sym_,
+      anon_sym_SPACE,
   [99] = 1,
     ACTIONS(48), 1,
       sym_label,
@@ -537,7 +537,7 @@ static const uint16_t ts_small_parse_table[] = {
       sym_dashes,
   [111] = 1,
     ACTIONS(54), 1,
-      anon_sym_,
+      anon_sym_SPACE,
   [115] = 1,
     ACTIONS(56), 1,
       aux_sym_data_token1,
