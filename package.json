@@ -30,6 +30,7 @@
   "tree-sitter": [
     {
       "scope": "text.pem",
+      "highlights": "queries/highlights.scm",
       "file-types": [
         "pem",
         "key",
