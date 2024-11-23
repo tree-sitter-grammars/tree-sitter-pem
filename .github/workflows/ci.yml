@@ -6,12 +6,14 @@ on:
     paths:
       - grammar.js
       - src/**
+      - test/**
       - bindings/**
       - binding.gyp
   pull_request:
     paths:
       - grammar.js
       - src/**
+      - test/**
       - bindings/**
       - binding.gyp
 
@@ -28,22 +30,22 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-14]
     steps:
-      - name: Set up repository
-        uses: tree-sitter/parser-setup-action@v1.1
-        with:
-          node-version: ${{vars.NODE_VERSION}}
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up tree-sitter
+        uses: tree-sitter/setup-action/cli@v2
       - name: Clone OpenSSL examples
         uses: actions/checkout@v4
         with:
           path: examples/openssl
           repository: openssl/openssl
           sparse-checkout: test/certs
-          ref: fd27a7e4f829e6a9b0d240efcabc39a971b8f511
       - name: Run tests
-        uses: tree-sitter/parser-test-action@v1.2
+        uses: tree-sitter/parser-test-action@v2
+      - name: Parse examples
+        uses: tree-sitter/parse-action@v4
         with:
-          test-library: ${{runner.os == 'Linux'}}
-          corpus-files: |-
+          files: |-
             examples/openssl/test/certs/*.pem
             examples/openssl/test/certs/*.csr
             examples/openssl/test/certs/*.crt
