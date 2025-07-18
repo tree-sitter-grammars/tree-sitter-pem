@@ -4,8 +4,8 @@
     {
       "name": "pem",
       "camelcase": "PEM",
+      "title": "PEM",
       "scope": "text.pem",
-      "path": ".",
       "file-types": [
         "pem",
         "key",
@@ -14,7 +14,8 @@
         "csr"
       ],
       "injection-regex": "^(pem|key|crt|cer|csr)$",
-      "highlights": "queries/highlights.scm"
+      "highlights": "queries/highlights.scm",
+      "class-name": "TreeSitterPEM"
     }
   ],
   "metadata": {
@@ -28,7 +29,8 @@
       }
     ],
     "links": {
-      "repository": "https://github.com/tree-sitter-grammars/tree-sitter-pem"
+      "repository": "https://github.com/tree-sitter-grammars/tree-sitter-pem",
+      "funding": "https://github.com/sponsors/ObserverOfTime"
     }
   }
 }
