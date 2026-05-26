@@ -1,0 +1,23 @@
+// PEM grammar for tree-sitter (native DSL).
+// Translated from grammar.js.
+
+grammar {
+    language: "pem",
+    extras: [regexp(r"\r?\n")],
+}
+
+rule pem { repeat(choice(content, comment)) }
+
+rule content { seq(header, data, footer) }
+
+rule header { seq(dashes, "BEGIN", " ", label, dashes) }
+
+rule footer { seq(dashes, "END", " ", label, dashes) }
+
+rule data { repeat1(regexp(r"[A-Za-z0-9+/]+={0,2}")) }
+
+rule label { regexp(r"[^-]+") }
+
+rule dashes { "-----" }
+
+rule comment { token(prec(-2, regexp(r".+"))) }
